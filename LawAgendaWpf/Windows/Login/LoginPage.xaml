@@ -1,0 +1,56 @@
+<Page x:Class="LawAgendaWpf.Windows.Login.LoginPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:md="http://materialdesigninxaml.net/winfx/xaml/themes"
+      xmlns:local="clr-namespace:LawAgendaWpf.Windows.Login"
+      xmlns:resources="clr-namespace:LawAgendaWpf.Resources"
+      xmlns:utils="clr-namespace:LawAgendaWpf.Utilities"
+      mc:Ignorable="d"
+      FontFamily="pack://application:,,,/MaterialDesignThemes.Wpf;component/Resources/Roboto/#Roboto"
+      TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+      TextElement.FontSize="14"
+      Background="{DynamicResource MaterialDesignPaper}"
+      FlowDirection="RightToLeft"
+      Title="{x:Static resources:Strings.PageLogin}" Height="450" Width="800"
+      d:DataContext="{d:DesignInstance local:LoginViewModel}">
+    <md:DialogHost Identifier="{Binding DialogIdentifier}">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.3*"/>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="0.3*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.3*"/>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="0.3*"/>
+            </Grid.RowDefinitions>
+
+            <Viewbox Grid.Row="1" Grid.Column="1">
+                <md:Card UniformCornerRadius="8" VerticalAlignment="Center" HorizontalAlignment="Center" MinWidth="300" 
+                         Background="{DynamicResource MaterialDesignCardBackground}" 
+                         md:ShadowAssist.ShadowEdges="All" md:ShadowAssist.ShadowDepth="Depth3">
+                    <StackPanel Margin="10" FocusManager.FocusedElement="{Binding ElementName=Username}">
+                        <TextBox md:HintAssist.Hint="{x:Static resources:Strings.Username}"
+                                 md:HintAssist.IsFloating="True" Margin="0 10"
+                                 x:Name="Username"
+                                 Text="{Binding Username, UpdateSourceTrigger=PropertyChanged}"/>
+                        <PasswordBox md:HintAssist.Hint="{x:Static resources:Strings.Password}"
+                                     md:HintAssist.IsFloating="True" Margin="0 10"/>
+                        <!--utils:PasswordBoxAssistant.BindPassword="True"-->
+                                     <!--utils:PasswordBoxAssistant.BoundPassword="{Binding Path=Password, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>-->
+                        <ProgressBar IsIndeterminate="True" Visibility="{Binding IsLoadingVisible}" />
+
+                        <Button Content="{x:Static resources:Strings.Login}" HorizontalAlignment="Left"
+                                Command="{Binding Path=CmdLoginExecution}"
+                                Margin="0 8"
+                                IsDefault="True"/>
+
+                    </StackPanel>
+                </md:Card>
+            </Viewbox>
+        </Grid>
+    </md:DialogHost>
+</Page>

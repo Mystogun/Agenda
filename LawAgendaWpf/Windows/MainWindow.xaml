@@ -1,0 +1,23 @@
+﻿<Window x:Class="LawAgendaWpf.Windows.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LawAgendaWpf.Windows"
+        xmlns:md="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:pt="clr-namespace:WpfPageTransitions;assembly=WpfPageTransitions"
+        xmlns:resources="clr-namespace:LawAgendaWpf.Resources"
+        mc:Ignorable="d"
+        FontFamily="pack://application:,,,/MaterialDesignThemes.Wpf;component/Resources/Roboto/#Roboto"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontSize="14"
+        Background="{DynamicResource MaterialDesignPaper}"
+        FlowDirection="RightToLeft"
+        WindowStartupLocation="CenterScreen"
+        WindowState="Maximized"
+        Title="{x:Static resources:Strings.WindowLogin}" Height="450" Width="800"
+        d:DataContext="{d:DesignInstance local:MainViewModel}">
+    <Grid>
+        <Frame x:Name="Main" Margin="0,35,0,0" NavigationUIVisibility="Hidden" Background="AliceBlue"/>
+    </Grid>
+</Window>

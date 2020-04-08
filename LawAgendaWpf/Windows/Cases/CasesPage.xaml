@@ -1,0 +1,12 @@
+<Page x:Class="LawAgendaWpf.Windows.Cases.CasesPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:local="clr-namespace:LawAgendaWpf.Windows.Cases"
+      mc:Ignorable="d"
+      Title="CasesPage" Height="450" Width="800">
+    <Grid>
+        <TextBlock Text="Cases Page" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="32"/>
+    </Grid>
+</Page>
